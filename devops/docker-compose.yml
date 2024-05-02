@@ -1,0 +1,17 @@
+version: '3'
+
+volumes:
+  postgresql-app:
+    driver: local
+
+services:
+  postgresql-app:
+    image: postgres:15.2
+    volumes:
+      - postgresql-app:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=appuser
+      - POSTGRES_PASSWORD=appuserdev
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5432:5432"
