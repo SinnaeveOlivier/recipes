@@ -57,6 +57,7 @@ public class RecipeEntity {
 
     public void updateOrCreateIngredient(IngredientEntity ingredient) {
         if (ingredient.getId() == null) {
+            ingredient.setId(UUID.randomUUID());
             addIngredient(ingredient);
         } else if (ingredients.contains(ingredient)) {
             IngredientEntity entity = ingredients.get(ingredients.indexOf(ingredient));

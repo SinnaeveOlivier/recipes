@@ -15,6 +15,7 @@ import java.util.UUID;
 @Table(name = "INGREDIENT")
 public class IngredientEntity {
 
+    @Setter
     @Id
     UUID id;
 
